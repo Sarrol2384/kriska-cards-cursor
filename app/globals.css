@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-playfair), ui-serif, Georgia, serif;
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --color-gold: var(--gold);
+  --color-gold-muted: var(--gold-muted);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+:root {
+  --background: #080808;
+  --foreground: #f5f0e6;
+  --card: #121212;
+  --card-foreground: #f5f0e6;
+  --primary: #c9a227;
+  --primary-foreground: #0a0a0a;
+  --gold: #d4af37;
+  --gold-muted: #8a7340;
+  --accent: #b91c2c;
+  --accent-foreground: #fff5f5;
+  --whatsapp: #25d366;
+  --whatsapp-foreground: #ffffff;
+  --muted: #1a1a1a;
+  --muted-foreground: #a39e90;
+  --border: rgba(201, 162, 39, 0.28);
+  --radius: 0.875rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(
+      120deg,
+      #fff8e7 0%,
+      #e8d48b 25%,
+      #c9a227 55%,
+      #a67c00 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .card-frame {
+    box-shadow:
+      0 0 0 1px rgba(201, 162, 39, 0.4),
+      0 0 0 4px rgba(0, 0, 0, 0.5),
+      0 28px 60px -16px rgba(0, 0, 0, 0.85),
+      0 0 100px -30px rgba(201, 162, 39, 0.2);
+  }
+
+  .gold-line {
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      #c9a227 20%,
+      #b91c2c 50%,
+      #c9a227 80%,
+      transparent
+    );
+  }
+
+  .btn-gold {
+    @apply border border-primary/50 bg-primary/10 text-primary transition-all;
+  }
+  .btn-gold:hover {
+    @apply border-primary bg-primary/20 shadow-[0_0_24px_-4px_rgba(201,162,39,0.45)];
+  }
+
+  .btn-accent-outline {
+    @apply border border-accent/60 bg-accent/5 text-foreground transition-all;
+  }
+  .btn-accent-outline:hover {
+    @apply border-accent bg-accent/15 shadow-[0_0_20px_-6px_rgba(185,28,44,0.5)];
+  }
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.sold-marquee {
+  animation: marquee-scroll 28s linear infinite;
+}
+
+.sold-marquee:hover {
+  animation-play-state: paused;
+}
+
+.name-shimmer {
+  background: linear-gradient(
+    90deg,
+    #c9a227 0%,
+    #fff8e7 25%,
+    #c9a227 50%,
+    #a67c00 75%,
+    #c9a227 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
