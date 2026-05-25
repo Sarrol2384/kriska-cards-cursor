@@ -21,6 +21,7 @@ export function SoldProperties() {
                   src={soldSrc(property.image)}
                   alt={property.title}
                   fill
+                  unoptimized
                   className="object-cover"
                   sizes="160px"
                 />

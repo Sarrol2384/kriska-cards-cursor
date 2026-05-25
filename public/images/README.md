@@ -17,13 +17,15 @@ Put photos in the **`sold/`** subfolder:
 
 | File | Used by |
 |------|---------|
-| `sold/1.jfif` (or `.jpg`, `.png`) | First row in `soldProperties` (`image: 1`) |
-| `sold/2.jfif` | Second row (`image: 2`) |
+| `sold/1.jpg` (not `.jfif`) | First row in `soldProperties` (`image: 1`) |
+| `sold/2.jpg` | Second row (`image: 2`) |
 | … | |
 
 **Folder must be** `public/images/sold/` — not `public/sold/`.
 
-Set `soldFileExtension` in `content/images.ts` to match your files (`"jfif"`, `"jpg"`, etc.).
+Use **`.jpg`** for sold photos. `.jfif` breaks on Vercel/mobile with Next.js Image.
+
+Set `soldFileExtension = "jpg"` in `content/images.ts`.
 
 In **`content/card.ts`**, each sold listing only needs a number:
 

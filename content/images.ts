@@ -11,8 +11,8 @@ export const logoFile = "eyethu-logo.png";
 /** Agent headshot → public/images/ (your file: agent.jpeg) */
 export const agentFile = "agent.jpeg";
 
-/** Sold thumbnails → public/images/sold/1.jfif, 2.jfif, … (must match your file extension) */
-export const soldFileExtension = "jfif";
+/** Sold thumbnails → public/images/sold/1.jpg, 2.jpg, … (use .jpg not .jfif — Next.js/Vercel) */
+export const soldFileExtension = "jpg";
 
 /** Designer logo in footer → public/images/ */
 export const designerLogoFile = "vonwillingh-logo.png";
