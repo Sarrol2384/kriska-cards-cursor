@@ -11,9 +11,9 @@ export function CardFooter() {
     <Image
       src={logoSrc}
       alt={designer.name}
-      width={120}
-      height={36}
-      className="h-8 w-auto max-w-[5.5rem] shrink-0 object-contain opacity-90"
+      width={140}
+      height={42}
+      className="h-9 w-auto max-w-[6.75rem] shrink-0 object-contain opacity-90 sm:h-10 sm:max-w-[7.25rem]"
     />
   );
 
