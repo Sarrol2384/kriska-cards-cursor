@@ -27,6 +27,8 @@ Use **`.jpg`** for sold photos. `.jfif` breaks on Vercel/mobile with Next.js Ima
 
 Set `soldFileExtension = "jpg"` in `content/images.ts`.
 
+If sold photos are missing in Cursor’s preview but work on your phone, open `http://localhost:3000/images/sold/1.jpg` in a browser. If that 404s, ensure the `.jpg` files exist and restart `npm run dev`.
+
 In **`content/card.ts`**, each sold listing only needs a number:
 
 ```ts

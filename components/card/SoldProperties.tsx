@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { card } from "@/content/card";
 import { soldSrc } from "@/lib/images";
 import { SectionTitle } from "@/components/card/SectionTitle";
@@ -17,13 +16,12 @@ export function SoldProperties() {
               className="w-36 shrink-0 overflow-hidden rounded-xl border border-primary/30 bg-[#0a0a0a] shadow-lg sm:w-40"
             >
               <div className="relative aspect-[4/3] bg-muted">
-                <Image
+                <img
                   src={soldSrc(property.image)}
                   alt={property.title}
-                  fill
-                  unoptimized
-                  className="object-cover"
-                  sizes="160px"
+                  className="size-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <span className="absolute right-2 top-2 rounded-full bg-accent px-2 py-0.5 text-[10px] font-bold tracking-wide text-accent-foreground uppercase shadow-md">
                   Sold
