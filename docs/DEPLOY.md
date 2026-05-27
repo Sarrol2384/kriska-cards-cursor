@@ -2,8 +2,8 @@
 
 ## Before you deploy
 
-1. Replace placeholder images in `public/images/` (see `public/images/README.md`).
-2. Edit `content/card.ts` and `content/images.ts`.
+1. Add agent images under `public/images/agents/{slug}/` (see `public/images/README.md`).
+2. Edit agent content in `content/agents/` (see `docs/AGENTS.md`).
 3. Run locally:
 
 ```bash

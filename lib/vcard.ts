@@ -1,11 +1,11 @@
-import { card } from "@/content/card";
+import type { CardConfig } from "@/content/types";
 import { normalizeSAPhone } from "@/lib/format/phone";
 
 function escapeVCard(value: string): string {
   return value.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/\n/g, "\\n");
 }
 
-export function buildVCard(): string {
+export function buildVCard(card: CardConfig): string {
   const phone = normalizeSAPhone(card.phone);
   const lines = [
     "BEGIN:VCARD",
@@ -23,7 +23,7 @@ export function buildVCard(): string {
   return lines.join("\r\n");
 }
 
-export function vCardDataUrl(): string {
-  const body = buildVCard();
+export function vCardDataUrl(card: CardConfig): string {
+  const body = buildVCard(card);
   return `data:text/vcard;charset=utf-8,${encodeURIComponent(body)}`;
 }

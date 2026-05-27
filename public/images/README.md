@@ -1,44 +1,25 @@
-# Images folder
+# Images
 
-Drop your files here — then update **`content/images.ts`** with the matching file names.
+## Shared (all agents)
 
-## Logo and agent photo
-
-| Drop this file here | Then set in `content/images.ts` |
-|---------------------|----------------------------------|
-| Any name, e.g. `eyethu-logo.png` | `logoFile = "eyethu-logo.png"` (must match exactly) |
-| Any name, e.g. `agent.jpeg` | `agentFile = "agent.jpeg"` |
-
-**Do not** open image files in the browser and “Save as” — that creates useless 1 KB HTML files. Copy the real `.png` / `.jpg` from Downloads.
-
-## Sold properties
-
-Put photos in the **`sold/`** subfolder:
-
-| File | Used by |
+| File | Purpose |
 |------|---------|
-| `sold/1.jpg` (not `.jfif`) | First row in `soldProperties` (`image: 1`) |
-| `sold/2.jpg` | Second row (`image: 2`) |
-| … | |
+| `eyethu-logo.png` | Logo on every card |
+| `vonwillingh-logo.png` | Footer designer logo |
 
-**Folder must be** `public/images/sold/` — not `public/sold/`.
+## Per agent
 
-Use **`.jpg`** for sold photos. `.jfif` breaks on Vercel/mobile with Next.js Image.
+Each agent has a folder:
 
-Set `soldFileExtension = "jpg"` in `content/images.ts`.
-
-If sold photos are missing in Cursor’s preview but work on your phone, open `http://localhost:3000/images/sold/1.jpg` in a browser. If that 404s, ensure the `.jpg` files exist and restart `npm run dev`.
-
-In **`content/card.ts`**, each sold listing only needs a number:
-
-```ts
-{ title: "Family home", suburb: "Kuils River", image: 1 },
+```
+agents/
+  nomonde-blandile/
+    agent.jpeg
+    sold/
+      1.jpg
+      2.jpg
+      …
 ```
 
-## Check everything is in place
-
-```bash
-npm run images:check
-```
-
-Lists missing files before you deploy.
+Filenames are configured in [`content/images.ts`](../../content/images.ts).  
+Add new agents using [`docs/AGENTS.md`](../../docs/AGENTS.md).

@@ -1,15 +1,18 @@
+"use client";
+
 import Image from "next/image";
-import { card } from "@/content/card";
+import { useAgentCard } from "@/components/card/AgentCardProvider";
 import { designerLogoSrc } from "@/lib/images";
 
 export function CardFooter() {
   const year = new Date().getFullYear();
+  const { card } = useAgentCard();
   const { designer } = card;
-  const logoSrc = designerLogoSrc();
+  const designerLogo = designerLogoSrc();
 
   const logo = (
     <Image
-      src={logoSrc}
+      src={designerLogo}
       alt={designer.name}
       width={140}
       height={42}

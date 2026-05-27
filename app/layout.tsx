@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Playfair_Display } from "next/font/google";
-import { card } from "@/content/card";
-import { agentSrc } from "@/lib/images";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,22 +15,9 @@ const playfair = Playfair_Display({
   weight: ["500", "600", "700"],
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: `${card.agentName} | Eyethu Property Group`,
-  description: card.bio.slice(0, 160),
-  openGraph: {
-    type: "website",
-    locale: "en_ZA",
-    siteName: "Eyethu Property Group",
-    title: `${card.agentName} — Digital card`,
-    description: card.bio.slice(0, 160),
-    images: [{ url: agentSrc(), width: 400, height: 400, alt: card.agentName }],
-  },
-  appleWebApp: { capable: true, title: "Eyethu PG" },
+  title: "Eyethu Property Group — Digital cards",
+  description: "Digital business cards for Eyethu Property Group agents.",
 };
 
 export const viewport: Viewport = {

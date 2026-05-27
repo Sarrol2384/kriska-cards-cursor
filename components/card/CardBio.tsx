@@ -1,6 +1,10 @@
-import { card } from "@/content/card";
+"use client";
+
+import { useAgentCard } from "@/components/card/AgentCardProvider";
 
 export function CardBio() {
+  const { card } = useAgentCard();
+
   return (
     <section className="px-1">
       <div className="relative rounded-xl border border-primary/20 bg-[#111111] px-5 py-4">

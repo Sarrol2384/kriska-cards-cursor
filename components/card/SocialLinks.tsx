@@ -1,14 +1,19 @@
+"use client";
+
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-import { card } from "@/content/card";
+import { useAgentCard } from "@/components/card/AgentCardProvider";
+import type { CardConfig } from "@/content/types";
 
 type SocialItem = {
-  key: keyof typeof card.social;
+  key: keyof CardConfig["social"];
   href: string;
   label: string;
   Icon: typeof Facebook;
 };
 
 export function SocialLinks() {
+  const { card } = useAgentCard();
+
   const items: SocialItem[] = [
     card.social.facebook
       ? { key: "facebook", href: card.social.facebook, label: "Facebook", Icon: Facebook }

@@ -1,17 +1,15 @@
 /**
- * Image settings — only edit this file when you add or replace photos.
- *
- * 1. Drop files into public/images/ (see public/images/README.md)
- * 2. Set the file names below to match (include extension: .png, .jpg, .webp)
+ * Shared image settings (brand logo, designer, sold file type).
+ * Agent photos live under public/images/agents/{slug}/
  */
 
-/** Logo at top of card → public/images/ (your file: eyethu-logo.png) */
+/** Logo at top of every card → public/images/ */
 export const logoFile = "eyethu-logo.png";
 
-/** Agent headshot → public/images/ (your file: agent.jpeg) */
+/** Agent headshot filename inside each agent folder */
 export const agentFile = "agent.jpeg";
 
-/** Sold thumbnails → public/images/sold/1.jpg, 2.jpg, … (use .jpg not .jfif — Next.js/Vercel) */
+/** Sold thumbnails → public/images/agents/{slug}/sold/1.jpg, … */
 export const soldFileExtension = "jpg";
 
 /** Designer logo in footer → public/images/ */

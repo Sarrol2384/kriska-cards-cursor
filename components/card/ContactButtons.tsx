@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Download,
   ExternalLink,
@@ -5,7 +7,7 @@ import {
   MessageCircle,
   Phone,
 } from "lucide-react";
-import { card } from "@/content/card";
+import { useAgentCard } from "@/components/card/AgentCardProvider";
 import {
   formatSAPhoneDisplay,
   telUrl,
@@ -14,9 +16,10 @@ import {
 import { SectionTitle } from "@/components/card/SectionTitle";
 
 export function ContactButtons() {
+  const { slug, card } = useAgentCard();
   const waUrl = whatsappUrl(card.phone, card.whatsappMessage);
   const displayPhone = formatSAPhoneDisplay(card.phone);
-  const vcardHref = "/api/vcard";
+  const vcardHref = `/api/vcard/${slug}`;
   const hasWebsite = card.websiteUrl && card.websiteUrl !== "#";
 
   return (

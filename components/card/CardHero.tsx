@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
-import { card } from "@/content/card";
-import { agentSrc, logoSrc } from "@/lib/images";
+import { useAgentCard } from "@/components/card/AgentCardProvider";
+import { logoSrc } from "@/lib/images";
 
 export function CardHero() {
+  const { card, agentPhotoSrc } = useAgentCard();
+
   return (
     <header className="relative flex flex-col items-center gap-4 pt-0">
       <div className="relative inline-flex w-full max-w-[min(94vw,18.5rem)] justify-center">
@@ -34,12 +38,13 @@ export function CardHero() {
           <div className="size-full rounded-full bg-[#0c0c0c]" />
         </div>
         <Image
-          src={agentSrc()}
+          src={agentPhotoSrc}
           alt={card.agentName}
           width={176}
           height={176}
           className="relative size-40 rounded-full border-2 border-[#0c0c0c] object-cover shadow-2xl sm:size-44"
           priority
+          unoptimized={agentPhotoSrc.startsWith("http")}
         />
       </div>
 
