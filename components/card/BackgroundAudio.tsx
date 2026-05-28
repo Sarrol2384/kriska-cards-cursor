@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
-const THEME_SRC = "/audio/eyethu-theme.mp3";
+const THEME_SRC = "/audio/kriska-theme.mp3";
 const VOLUME = 0.5;
 
 export function BackgroundAudio() {

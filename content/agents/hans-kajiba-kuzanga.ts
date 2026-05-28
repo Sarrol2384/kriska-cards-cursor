@@ -6,7 +6,7 @@ export const hansKajibaKuzanga: AgentProfile = {
   role: defaultRole,
   tagline: defaultTagline,
   bio:
-    "A client-first approach with clear, honest guidance tailored to your needs. Reach out via WhatsApp or email — I look forward to connecting with you.",
+    "Prof. Hans Kajiba Kuzanga Sr. is a multifaceted leader, author, pastor, educator, business coach, and Pan-African political analyst based in Cape Town, South Africa.\n\nExpertise\nCombines digital media, Pan-African politics, philanthropy, technology, policy, and community development. Works as a digital specialist and Pan-African political analyst navigating the intersection of tech, policy, and community development.\n\nVision\nFocused on empowering individuals, communities, and organizations through education, leadership development, and ministry.",
   phone: "+260 57 034 3880",
   whatsappPhone: "+27 75 122 4141",
   email: "info@kriskasolutions.co.za",

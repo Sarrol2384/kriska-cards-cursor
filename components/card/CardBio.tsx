@@ -7,7 +7,7 @@ export function CardBio() {
 
   return (
     <section className="px-4 pt-0 sm:px-5">
-      <p className="text-[0.875rem] leading-snug text-[#6b7280]">
+      <p className="whitespace-pre-line text-[0.875rem] leading-snug text-[#6b7280]">
         {card.bio}
       </p>
     </section>

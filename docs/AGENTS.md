@@ -26,7 +26,7 @@ Shared for all agents (do not duplicate):
 
 - `public/images/eyethu-logo.png`
 - `public/images/vonwillingh-logo.png`
-- Theme music: `public/audio/eyethu-theme.mp3`
+- Theme music: `public/audio/kriska-theme.mp3`
 
 ## Steps (about 15 minutes per agent)
 
