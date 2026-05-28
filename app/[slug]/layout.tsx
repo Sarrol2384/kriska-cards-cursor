@@ -27,19 +27,19 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(siteUrl),
-    title: `${card.agentName} | Eyethu Property Group`,
+    title: `${card.agentName} | KrisKa Solutions`,
     description,
     openGraph: {
       type: "website",
       locale: "en_ZA",
-      siteName: "Eyethu Property Group",
+      siteName: "KrisKa Solutions Ltd",
       title: `${card.agentName} — Digital card`,
       description,
       images: [
         { url: agentPhotoSrc, width: 400, height: 400, alt: card.agentName },
       ],
     },
-    appleWebApp: { capable: true, title: "Eyethu PG" },
+    appleWebApp: { capable: true, title: "KrisKa" },
   };
 }
 

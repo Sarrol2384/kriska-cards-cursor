@@ -4,7 +4,6 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-playfair), ui-serif, Georgia, serif;
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-accent: var(--accent);
@@ -16,30 +15,31 @@
   --color-card-foreground: var(--card-foreground);
   --color-whatsapp: var(--whatsapp);
   --color-whatsapp-foreground: var(--whatsapp-foreground);
-  --color-gold: var(--gold);
-  --color-gold-muted: var(--gold-muted);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
 }
 
 :root {
-  --background: #080808;
-  --foreground: #f5f0e6;
-  --card: #121212;
-  --card-foreground: #f5f0e6;
-  --primary: #c9a227;
-  --primary-foreground: #0a0a0a;
-  --gold: #d4af37;
-  --gold-muted: #8a7340;
-  --accent: #b91c2c;
-  --accent-foreground: #fff5f5;
+  --brand-blue: #1d6fd4;
+  --brand-blue-dark: #1558ad;
+  /** Lighter cyan-blue from KrisKa logo (hero lower area) */
+  --brand-blue-light: #6eb8e8;
+  --brand-blue-soft: #e8f4fc;
+  --background: #eef2f7;
+  --foreground: #111827;
+  --card: #ffffff;
+  --card-foreground: #111827;
+  --primary: #1d6fd4;
+  --primary-foreground: #ffffff;
+  --accent: #1d6fd4;
+  --accent-foreground: #ffffff;
   --whatsapp: #25d366;
   --whatsapp-foreground: #ffffff;
-  --muted: #1a1a1a;
-  --muted-foreground: #a39e90;
-  --border: rgba(201, 162, 39, 0.28);
-  --radius: 0.875rem;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --border: #e5e7eb;
+  --radius: 0.75rem;
 }
 
 @layer base {
@@ -52,77 +52,18 @@
 }
 
 @layer utilities {
-  .text-gold-gradient {
-    background: linear-gradient(
-      120deg,
-      #fff8e7 0%,
-      #e8d48b 25%,
-      #c9a227 55%,
-      #a67c00 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  .btn-primary {
+    @apply border border-transparent bg-primary text-primary-foreground transition-all;
+  }
+  .btn-primary:hover {
+    @apply bg-[var(--brand-blue-dark)] shadow-[0_4px_14px_-4px_rgba(29,111,212,0.55)];
   }
 
-  .card-frame {
-    box-shadow:
-      0 0 0 1px rgba(201, 162, 39, 0.4),
-      0 0 0 4px rgba(0, 0, 0, 0.5),
-      0 28px 60px -16px rgba(0, 0, 0, 0.85),
-      0 0 100px -30px rgba(201, 162, 39, 0.2);
+  .btn-outline {
+    @apply border border-[#d1d5db] bg-white text-[#374151] transition-all;
   }
-
-  .gold-line {
-    height: 2px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      #c9a227 20%,
-      #b91c2c 50%,
-      #c9a227 80%,
-      transparent
-    );
-  }
-
-  .btn-gold {
-    @apply border border-primary/50 bg-primary/10 text-primary transition-all;
-  }
-  .btn-gold:hover {
-    @apply border-primary bg-primary/20 shadow-[0_0_24px_-4px_rgba(201,162,39,0.45)];
-  }
-
-  .btn-accent-outline {
-    @apply border border-accent/60 bg-accent/5 text-foreground transition-all;
-  }
-  .btn-accent-outline:hover {
-    @apply border-accent bg-accent/15 shadow-[0_0_20px_-6px_rgba(185,28,44,0.5)];
-  }
-
-  .logo-plate {
-    background: radial-gradient(
-      ellipse 85% 70% at 50% 45%,
-      #fff4d4 0%,
-      #fffdf7 38%,
-      #f5e9c4 100%
-    );
-    box-shadow:
-      0 4px 16px rgba(0, 0, 0, 0.3),
-      0 0 0 1px rgba(201, 162, 39, 0.4),
-      inset 0 0 36px rgba(212, 175, 55, 0.45),
-      inset 0 0 72px rgba(201, 162, 39, 0.22),
-      inset 0 0 120px rgba(255, 236, 179, 0.35),
-      inset 0 1px 0 rgba(255, 252, 240, 0.9);
-  }
-
-  .logo-plate-inner-glow {
-    background: radial-gradient(
-      ellipse 75% 60% at 50% 50%,
-      rgba(255, 220, 120, 0.55) 0%,
-      rgba(212, 175, 55, 0.28) 42%,
-      transparent 68%
-    );
-    animation: logo-glow-pulse 4s ease-in-out infinite;
+  .btn-outline:hover {
+    @apply border-primary/40 bg-[#f8fafc] text-primary;
   }
 }
 
@@ -135,58 +76,10 @@
   }
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: 200% center;
-  }
-  100% {
-    background-position: -200% center;
-  }
-}
-
 .sold-marquee {
   animation: marquee-scroll 28s linear infinite;
 }
 
 .sold-marquee:hover {
   animation-play-state: paused;
-}
-
-.agent-name-fx {
-  background: linear-gradient(
-    90deg,
-    #c9a227 0%,
-    #fff8e7 22%,
-    #e8d48b 45%,
-    #c9a227 68%,
-    #a67c00 100%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: shimmer 5s ease-in-out infinite;
-  filter: drop-shadow(0 0 12px rgba(201, 162, 39, 0.45));
-}
-
-@keyframes logo-glow-pulse {
-  0%,
-  100% {
-    opacity: 0.55;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes name-glow {
-  0%,
-  100% {
-    text-shadow: 0 0 20px rgba(201, 162, 39, 0.35);
-  }
-  50% {
-    text-shadow:
-      0 0 28px rgba(201, 162, 39, 0.55),
-      0 0 8px rgba(185, 28, 44, 0.25);
-  }
 }

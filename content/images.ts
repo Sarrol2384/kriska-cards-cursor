@@ -4,10 +4,10 @@
  */
 
 /** Logo at top of every card → public/images/ */
-export const logoFile = "eyethu-logo.png";
+export const logoFile = "kriska-logo.png";
 
-/** Agent headshot filename inside each agent folder */
-export const agentFile = "agent.jpeg";
+/** Agent headshot inside each agent folder (transparent PNG) */
+export const agentFile = "agent.png";
 
 /** Sold thumbnails → public/images/agents/{slug}/sold/1.jpg, … */
 export const soldFileExtension = "jpg";

@@ -3,61 +3,64 @@
 import Image from "next/image";
 import { useAgentCard } from "@/components/card/AgentCardProvider";
 import { logoSrc } from "@/lib/images";
+import { HeroTopWaves } from "@/components/card/HeroTopWaves";
+import { WaveDivider } from "@/components/card/WaveDivider";
+
+const heroBlueBg =
+  "linear-gradient(165deg, var(--brand-blue-light) 0%, #4a9fd4 45%, var(--brand-blue) 100%)";
 
 export function CardHero() {
   const { card, agentPhotoSrc } = useAgentCard();
 
   return (
-    <header className="relative flex flex-col items-center gap-4 pt-0">
-      <div className="relative inline-flex w-full max-w-[min(94vw,18.5rem)] justify-center">
-        <div className="logo-plate relative w-full overflow-hidden rounded-xl px-5 py-2.5">
-          <div
-            className="logo-plate-inner-glow pointer-events-none absolute inset-0"
-            aria-hidden
+    <header className="relative bg-white">
+      {/* Blue hero — Hans only */}
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ background: heroBlueBg }}
+      >
+        <HeroTopWaves />
+
+        <div className="relative z-10 flex justify-start px-4 pt-3 pb-0 sm:px-5 sm:pt-4">
+          <Image
+            src={agentPhotoSrc}
+            alt={card.agentName}
+            width={900}
+            height={1100}
+            className="mix-blend-screen -ml-5 h-[min(88vw,26rem)] w-auto max-w-none object-contain object-bottom sm:-ml-7 sm:h-[28rem]"
+            priority
+            unoptimized
           />
+        </div>
+
+        <WaveDivider />
+      </div>
+
+      {/* White — logo then name block */}
+      <div className="relative px-4 sm:px-5">
+        <div className="flex justify-center pt-4 pb-2 sm:pt-5">
           <Image
             src={logoSrc()}
-            alt="Eyethu Property Group"
-            width={320}
-            height={108}
-            className="relative z-10 mx-auto h-auto max-h-[4.25rem] w-full max-w-[16.5rem] object-contain"
+            alt="KrisKa Solutions Ltd"
+            width={640}
+            height={240}
+            className="h-[7rem] w-auto max-w-[min(92vw,18rem)] object-contain sm:h-[8rem] sm:max-w-[20rem]"
             priority
+            unoptimized
           />
         </div>
-      </div>
 
-      <div className="relative">
-        <div
-          className="absolute -inset-3 rounded-full bg-gradient-to-br from-primary/50 via-accent/30 to-primary/20 blur-md"
-          aria-hidden
-        />
-        <div
-          className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-primary via-[#f5e6b8] to-accent p-[3px]"
-          aria-hidden
-        >
-          <div className="size-full rounded-full bg-[#0c0c0c]" />
+        <div className="space-y-0.5 pb-1 pt-2 text-left sm:pt-3">
+          <h1 className="text-[1.6rem] font-bold leading-tight tracking-tight text-[#111827] sm:text-[1.75rem]">
+            {card.agentName}
+          </h1>
+          <p className="text-[0.9375rem] font-medium text-[#4b5563] sm:text-base">
+            {card.role.replace(/\s*\|\s*/g, " | ")}
+          </p>
+          <p className="text-sm font-semibold text-[var(--brand-blue)]">
+            {card.tagline}
+          </p>
         </div>
-        <Image
-          src={agentPhotoSrc}
-          alt={card.agentName}
-          width={176}
-          height={176}
-          className="relative size-40 rounded-full border-2 border-[#0c0c0c] object-cover shadow-2xl sm:size-44"
-          priority
-          unoptimized={agentPhotoSrc.startsWith("http")}
-        />
-      </div>
-
-      <div className="text-center">
-        <h1 className="agent-name-fx font-heading text-[1.85rem] font-bold leading-snug tracking-wide sm:text-[2rem]">
-          {card.agentName}
-        </h1>
-        <p className="mt-2 text-sm font-bold tracking-[0.2em] text-accent uppercase sm:text-base">
-          {card.role}
-        </p>
-        <p className="mt-2 text-base font-medium text-primary/90 sm:text-lg">
-          {card.tagline}
-        </p>
       </div>
     </header>
   );

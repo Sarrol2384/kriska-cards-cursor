@@ -1,6 +1,6 @@
-# Eyethu Property Group — Digital card
+# KrisKa Solutions — Digital card
 
-Mobile-first link-in-bio style digital business card for Eyethu Property Group agents.
+Mobile-first link-in-bio style digital business card for KrisKa Solutions team members.
 
 ## Quick start
 

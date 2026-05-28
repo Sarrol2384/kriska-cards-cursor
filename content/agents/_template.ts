@@ -9,13 +9,13 @@ export const agentTemplate: AgentProfile = {
   agentName: "Full Name",
   role: defaultRole,
   tagline: defaultTagline,
-  bio: "Write 2–4 sentences about how you help buyers and sellers.",
+  bio: "Write 2–4 sentences about how you help clients.",
   phone: "0XXXXXXXXX",
   email: "name@mjgrealestate.co.za",
   whatsappMessage:
-    "Hi, I'd like to get in touch via your Eyethu Property Group digital card.",
+    "Hi, I'd like to get in touch via your KrisKa Solutions digital card.",
   websiteUrl: "#",
-  websiteLabel: "Browse homes",
+  websiteLabel: "Learn more",
   social: {
     facebook: "",
     instagram: "",

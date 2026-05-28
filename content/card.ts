@@ -7,5 +7,5 @@ export { getAgent, getAllAgentSlugs, isValidSlug } from "@/content/agents";
 
 import { getAgent } from "@/content/agents";
 
-/** @deprecated Use getAgent("nomonde-blandile") or the /[slug] route */
-export const card = getAgent("nomonde-blandile")!;
+/** @deprecated Use getAgent("hans-kajiba-kuzanga") or the /[slug] route */
+export const card = getAgent("hans-kajiba-kuzanga")!;

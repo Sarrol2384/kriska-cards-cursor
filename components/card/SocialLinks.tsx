@@ -34,11 +34,11 @@ export function SocialLinks() {
   if (items.length === 0) return null;
 
   return (
-    <section className="space-y-4 pb-2">
-      <h2 className="text-center text-xs font-bold tracking-[0.18em] text-primary/90 uppercase">
-        Follow us on social media
+    <section className="space-y-2 px-4 pb-0 sm:px-5">
+      <h2 className="text-left text-sm font-semibold text-[#374151]">
+        Follow on social media
       </h2>
-      <div className="flex flex-wrap items-center justify-center gap-3">
+      <div className="flex flex-wrap items-center gap-3">
         {items.map(({ key, href, label, Icon }) => (
           <a
             key={key}
@@ -46,7 +46,7 @@ export function SocialLinks() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={label}
-            className="flex size-12 items-center justify-center rounded-full border border-primary/40 bg-[#141414] text-primary shadow-[0_0_20px_-8px_rgba(201,162,39,0.5)] transition-all hover:border-accent hover:bg-accent/20 hover:text-accent-foreground"
+            className="flex size-11 items-center justify-center rounded-full border border-[#e5e7eb] bg-white text-primary shadow-sm transition-all hover:border-primary hover:bg-[#f0f7ff]"
           >
             <Icon className="size-5" aria-hidden />
           </a>

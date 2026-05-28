@@ -6,20 +6,10 @@ export function CardBio() {
   const { card } = useAgentCard();
 
   return (
-    <section className="px-1">
-      <div className="relative rounded-xl border border-primary/20 bg-[#111111] px-5 py-4">
-        <div
-          className="pointer-events-none absolute top-3 bottom-3 left-0 w-[3px] rounded-full bg-gradient-to-b from-primary via-accent to-primary"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute top-3 bottom-3 right-0 w-[3px] rounded-full bg-gradient-to-b from-primary via-accent to-primary"
-          aria-hidden
-        />
-        <p className="text-center font-sans text-[0.9375rem] leading-relaxed text-muted-foreground">
-          {card.bio}
-        </p>
-      </div>
+    <section className="px-4 pt-0 sm:px-5">
+      <p className="text-[0.875rem] leading-snug text-[#6b7280]">
+        {card.bio}
+      </p>
     </section>
   );
 }

@@ -16,7 +16,7 @@ export function CardFooter() {
       alt={designer.name}
       width={140}
       height={42}
-      className="h-9 w-auto max-w-[6.75rem] shrink-0 object-contain opacity-90 sm:h-10 sm:max-w-[7.25rem]"
+      className="h-8 w-auto max-w-[6.75rem] shrink-0 object-contain opacity-90"
     />
   );
 
@@ -34,15 +34,13 @@ export function CardFooter() {
   );
 
   return (
-    <footer className="space-y-4 border-t border-primary/20 px-2 pt-6 pb-4 text-center text-[11px] leading-relaxed text-muted-foreground">
-      <div className="gold-line mx-auto mb-4 w-full max-w-[12rem]" aria-hidden />
-      <p className="text-foreground/90">
-        © {year} Eyethu Property Group. All rights reserved.
+    <footer className="space-y-2 border-t border-[#e5e7eb] px-4 pt-3 pb-2 text-center text-[10px] leading-snug text-[#6b7280] sm:px-5">
+      <p className="text-[#374151]">
+        © {year} {card.tagline}. All rights reserved.
       </p>
-      <p>MJG Real Estate T/A Eyethu Property Group · Cape Town · Western Cape</p>
 
-      <div className="flex flex-col items-center gap-2 pt-2">
-        <p className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-2 text-muted-foreground">
+      <div className="flex flex-col items-center gap-2 pt-1">
+        <p className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-2">
           <span>Digital card by</span>
           <span className="inline-flex items-center gap-2">
             <span className="font-medium text-primary">{designer.name}</span>
@@ -54,7 +52,7 @@ export function CardFooter() {
             Contact —{" "}
             <a
               href={`tel:${designer.phone.replace(/\s/g, "")}`}
-              className="text-primary underline underline-offset-2 hover:text-accent"
+              className="text-primary underline underline-offset-2 hover:text-[var(--brand-blue-dark)]"
             >
               {designer.phone}
             </a>

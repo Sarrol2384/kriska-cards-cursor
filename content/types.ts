@@ -30,6 +30,8 @@ export type CardConfig = {
   tagline: string;
   bio: string;
   phone: string;
+  /** WhatsApp number; falls back to phone if omitted */
+  whatsappPhone?: string;
   email: string;
   whatsappMessage: string;
   websiteUrl: string;

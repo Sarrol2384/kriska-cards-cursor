@@ -10,7 +10,7 @@ const AGENTS_BASE = `${IMAGES_BASE}/agents`;
 
 /** Logo URL for Next.js Image / Open Graph (shared) */
 export function logoSrc(): string {
-  return `${IMAGES_BASE}/${logoFile}`;
+  return `${IMAGES_BASE}/${logoFile}?v=2`;
 }
 
 /** Agent photo URL for a given slug */

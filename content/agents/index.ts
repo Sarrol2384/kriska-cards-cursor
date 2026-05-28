@@ -1,8 +1,10 @@
 import type { AgentProfile, CardConfig } from "@/content/types";
 import { sharedDesigner } from "@/content/shared";
+import { hansKajibaKuzanga } from "@/content/agents/hans-kajiba-kuzanga";
 import { nomondeBlandile } from "@/content/agents/nomonde-blandile";
 
 const agents: Record<string, AgentProfile> = {
+  "hans-kajiba-kuzanga": hansKajibaKuzanga,
   "nomonde-blandile": nomondeBlandile,
 };
 

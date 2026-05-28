@@ -113,13 +113,15 @@ function filePayload(slug: string): AgentCardPayload | undefined {
 }
 
 export async function listAgentSlugs(): Promise<string[]> {
-  if (!isSupabaseConfigured()) return getFileSlugs();
+  const fileSlugs = getFileSlugs();
+  if (!isSupabaseConfigured()) return fileSlugs;
 
   const supabase = createSupabasePublicClient();
   const { data, error } = await supabase.from("agents").select("slug").order("agent_name");
 
-  if (error || !data?.length) return getFileSlugs();
-  return data.map((r) => r.slug);
+  if (error || !data?.length) return fileSlugs;
+  const dbSlugs = data.map((r) => r.slug);
+  return [...new Set([...dbSlugs, ...fileSlugs])];
 }
 
 export async function isValidAgentSlug(slug: string): Promise<boolean> {
@@ -133,7 +135,10 @@ export async function isValidAgentSlug(slug: string): Promise<boolean> {
 }
 
 export async function getAgentCardPayload(slug: string): Promise<AgentCardPayload | undefined> {
-  if (!isSupabaseConfigured()) return filePayload(slug);
+  const fromFiles = filePayload(slug);
+  if (fromFiles) return fromFiles;
+
+  if (!isSupabaseConfigured()) return undefined;
 
   const supabase = createSupabasePublicClient();
   const { data: agent, error: agentError } = await supabase
@@ -142,7 +147,7 @@ export async function getAgentCardPayload(slug: string): Promise<AgentCardPayloa
     .eq("slug", slug)
     .maybeSingle();
 
-  if (agentError || !agent) return filePayload(slug);
+  if (agentError || !agent) return undefined;
 
   const { data: properties } = await supabase
     .from("properties")

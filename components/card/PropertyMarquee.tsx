@@ -17,16 +17,16 @@ export function PropertyMarquee({
   const items = [...listings, ...listings];
 
   return (
-    <section className="space-y-4">
+    <section className="space-y-4 px-5 sm:px-6">
       <SectionTitle>{title}</SectionTitle>
-      <div className="overflow-hidden rounded-2xl border border-primary/25 bg-[#111]/90 py-3 shadow-[inset_0_1px_0_rgba(201,162,39,0.15)]">
+      <div className="overflow-hidden rounded-xl border border-[#e5e7eb] bg-[#f9fafb] py-3">
         <div className="sold-marquee flex w-max gap-3 px-3">
           {items.map((property, index) => (
             <article
               key={`${property.id}-${index}`}
-              className="w-36 shrink-0 overflow-hidden rounded-xl border border-primary/30 bg-[#0a0a0a] shadow-lg sm:w-40"
+              className="w-36 shrink-0 overflow-hidden rounded-lg border border-[#e5e7eb] bg-white shadow-sm sm:w-40"
             >
-              <div className="relative aspect-[4/3] bg-muted">
+              <div className="relative aspect-[4/3] bg-[#f3f4f6]">
                 {property.imageUrl ? (
                   <img
                     src={property.imageUrl}
@@ -40,15 +40,15 @@ export function PropertyMarquee({
                     No photo
                   </div>
                 )}
-                <span className="absolute right-2 top-2 rounded-full bg-accent px-2 py-0.5 text-[10px] font-bold tracking-wide text-accent-foreground uppercase shadow-md">
+                <span className="absolute top-2 right-2 rounded-full bg-primary px-2 py-0.5 text-[10px] font-bold tracking-wide text-primary-foreground uppercase">
                   {badgeLabel}
                 </span>
               </div>
-              <div className="space-y-0.5 border-t border-primary/15 bg-[#121212] p-2.5">
-                <p className="text-xs font-semibold leading-tight text-foreground">
+              <div className="space-y-0.5 border-t border-[#e5e7eb] p-2.5">
+                <p className="text-xs leading-tight font-semibold text-[#111827]">
                   {property.title}
                 </p>
-                <p className="text-[11px] text-primary/80">{property.suburb}</p>
+                <p className="text-[11px] text-[#6b7280]">{property.suburb}</p>
               </div>
             </article>
           ))}

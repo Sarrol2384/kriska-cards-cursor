@@ -46,15 +46,15 @@ export function BackgroundAudio() {
     <button
       type="button"
       onClick={toggle}
-      aria-label={playing ? "Turn off theme music" : "Play Eyethu theme music"}
+      aria-label={playing ? "Turn off theme music" : "Play theme music"}
       aria-pressed={playing}
       title={playing ? "Music on" : "Music off"}
-      className="fixed bottom-4 left-4 z-50 flex size-11 items-center justify-center rounded-full border border-primary/40 bg-[#0c0c0c]/90 text-primary shadow-lg backdrop-blur-sm transition-colors hover:border-primary hover:bg-[#1a1a1a]"
+      className="fixed bottom-4 left-4 z-50 flex size-11 items-center justify-center rounded-full border border-[#e5e7eb] bg-white text-primary shadow-md transition-colors hover:border-primary hover:bg-[#f0f7ff]"
     >
       {playing ? (
         <Volume2 className="size-5" />
       ) : (
-        <VolumeX className="size-5 opacity-70" />
+        <VolumeX className="size-5 opacity-60" />
       )}
     </button>
   );

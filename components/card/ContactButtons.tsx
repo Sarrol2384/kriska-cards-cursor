@@ -17,42 +17,43 @@ import { SectionTitle } from "@/components/card/SectionTitle";
 
 export function ContactButtons() {
   const { slug, card } = useAgentCard();
-  const waUrl = whatsappUrl(card.phone, card.whatsappMessage);
+  const waNumber = card.whatsappPhone ?? card.phone;
+  const waUrl = whatsappUrl(waNumber, card.whatsappMessage);
   const displayPhone = formatSAPhoneDisplay(card.phone);
   const vcardHref = `/api/vcard/${slug}`;
   const hasWebsite = card.websiteUrl && card.websiteUrl !== "#";
 
   return (
-    <section className="space-y-3">
-      <SectionTitle>Contact Me</SectionTitle>
-      <div className="flex flex-col gap-2.5">
+    <section className="space-y-2 px-4 sm:px-5">
+      <SectionTitle>Contact me</SectionTitle>
+      <div className="flex flex-col gap-2">
         <a
           href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex min-h-12 items-center justify-center gap-2 rounded-full bg-whatsapp px-4 py-3 text-sm font-semibold text-whatsapp-foreground shadow-[0_4px_24px_-4px_rgba(37,211,102,0.55)] ring-2 ring-primary/30 transition-all hover:scale-[1.02] hover:ring-primary/60"
+          className="flex min-h-11 items-center justify-center gap-2 rounded-lg bg-whatsapp px-4 py-2.5 text-sm font-semibold text-whatsapp-foreground shadow-sm transition-all hover:brightness-105"
         >
           <MessageCircle className="size-5 shrink-0" aria-hidden />
           WhatsApp me
         </a>
         <a
           href={telUrl(card.phone)}
-          className="btn-gold flex min-h-12 items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-semibold"
+          className="btn-primary flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold"
         >
           <Phone className="size-4 shrink-0" aria-hidden />
           {displayPhone}
         </a>
         <a
           href={`mailto:${card.email}?subject=${encodeURIComponent("Enquiry via digital card")}`}
-          className="btn-accent-outline flex min-h-12 items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-medium"
+          className="btn-outline flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium"
         >
-          <Mail className="size-4 shrink-0 text-accent" aria-hidden />
+          <Mail className="size-4 shrink-0 text-primary" aria-hidden />
           Email
         </a>
         <a
           href={vcardHref}
           download={`${card.agentName.replace(/\s+/g, "-")}.vcf`}
-          className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-dashed border-primary/40 bg-primary/5 px-4 py-3 text-sm font-medium text-primary transition-all hover:border-primary hover:bg-primary/10"
+          className="btn-outline flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium"
         >
           <Download className="size-4 shrink-0" aria-hidden />
           Save contact
@@ -62,7 +63,7 @@ export function ContactButtons() {
             href={card.websiteUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-gold flex min-h-12 items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-medium"
+            className="btn-primary flex min-h-12 items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium"
           >
             <ExternalLink className="size-4 shrink-0" aria-hidden />
             {card.websiteLabel}

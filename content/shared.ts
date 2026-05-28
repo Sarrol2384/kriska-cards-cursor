@@ -1,7 +1,7 @@
 import type { CardConfig } from "@/content/types";
 
-export const defaultRole = "PROPERTY PRACTITIONER";
-export const defaultTagline = "Eyethu Property Group";
+export const defaultRole = "Director";
+export const defaultTagline = "KrisKa Solutions Ltd";
 
 export const sharedDesigner: CardConfig["designer"] = {
   name: "VonWillingh Online",
